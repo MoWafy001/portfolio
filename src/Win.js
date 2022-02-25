@@ -1,6 +1,9 @@
 import { useState } from 'react';
 
-export default function Win({ children, x, y, width, height, title }) {
+export default function Win({ children, x, y, width, height, title, lock, resizeable }) {
+    if(lock === undefined) lock = false
+
+
     const page_height = window.innerHeight;
     const page_width = window.innerWidth;
 
@@ -25,16 +28,19 @@ export default function Win({ children, x, y, width, height, title }) {
     }
 
     const move_window = () => {
+        if(lock) return
         if (cursor !== 'default') return
         const { mouseX, mouseY } = window;
-
+        
         setPos({
             left: (mouseX - size.w / 2) + "px",
             top: (mouseY - 20) + "px",
         })
     }
-
+    
     const handel_window_mouse_move = e => {
+        if(!resizeable)return
+
         const { clientX, clientY } = e;
 
 
@@ -102,7 +108,7 @@ export default function Win({ children, x, y, width, height, title }) {
     return (
         <div
             onMouseMove={handel_window_mouse_move}
-            className='window' style={{
+            className={`window ${mousePressed && !lock?"":"up-n-down"}`} style={{
                 top: pos.top,
                 left: pos.left,
                 width: size.w,

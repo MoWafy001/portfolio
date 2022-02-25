@@ -76,3 +76,44 @@ body{
 .win-body *{
     font-size: 1em;
 }
+
+.page-heading{
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+}
+
+.page-button{
+    border-radius: 1em;
+    outline: none;
+    border: 1px solid #5555;
+    background: #eee;
+    padding: 0.5em 1em;
+    transition: 100ms;
+}
+.page-button:hover{
+    border-color: #111;
+    background: #fff;
+}
+.page-button:active{
+    background: #111;
+    color: #eee;
+}
+
+.up-n-down{
+    animation-name: upndown;
+    animation-duration: 2s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes upndown {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(10px);
+    }
+}
