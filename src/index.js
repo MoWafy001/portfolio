@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+import './index.css'
+
+window.move_window = null
+window.resize_window = null
+
+window.onmousemove = e => {
+  window.mouseX = e.clientX;
+  window.mouseY = e.clientY;
+
+  if (window.move_window) window.move_window()
+  if (window.resize_window) window.resize_window()
+}
+
+window.mousePressed = false
+window.onmousedown = () => {window.mousePressed = true}
+window.onmouseup = () => {window.mousePressed = false}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

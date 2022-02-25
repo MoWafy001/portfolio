@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Win from "./Win";
+
+const centerX = window.innerWidth/2 - 200 + "px"
+const centerY = window.innerHeight/2 - 150 + "px"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <Win title="test1" x={centerX} y={centerY} width={400} height={300}>
+        <span>test1</span>
+      </Win>
+
     </div>
   );
 }
