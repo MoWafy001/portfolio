@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { animated } from 'react-spring';
 
-export default function Win({ children, x, y, width, height, title, lock, resizeable }) {
-    if(lock === undefined) lock = false
+export default function Win({ children, x, y, width, height, title, lock, resizeable, body_style, animation_styles }) {
+    if (lock === undefined) lock = false
 
 
     const page_height = window.innerHeight;
@@ -13,11 +14,11 @@ export default function Win({ children, x, y, width, height, title, lock, resize
     })
     const [mousePressed, setMousePressed] = useState(false)
     const [pos, setPos] = useState({
-        top: y || (page_width - size.w) / 2 + "px",
-        left: x || (page_height - size.h) / 2 + "px",
+        top: y || (page_width - size.w) / 2,
+        left: x || (page_height - size.h) / 2,
     })
     const [cursor, setCursor] = useState('default')
-    const [win_title] = useState(title || 'title') 
+    const [win_title] = useState(title || 'title')
 
 
     const handel_move = e => {
@@ -28,26 +29,28 @@ export default function Win({ children, x, y, width, height, title, lock, resize
     }
 
     const move_window = () => {
-        if(lock) return
+        if (lock) return
         if (cursor !== 'default') return
         const { mouseX, mouseY } = window;
-        
+
         setPos({
-            left: (mouseX - size.w / 2) + "px",
-            top: (mouseY - 20) + "px",
+            left: (mouseX - size.w / 2),
+            top: (mouseY - 20),
         })
     }
-    
+
     const handel_window_mouse_move = e => {
-        if(!resizeable)return
+        if (!resizeable) return
 
         const { clientX, clientY } = e;
 
 
-        const left_start = Number(pos.left.slice(0, -2));
-        const top_start = Number(pos.top.slice(0, -2));
-        const left_end = Number(pos.left.slice(0, -2)) + size.w;
-        const top_end = Number(pos.top.slice(0, -2)) + size.h;
+        const left_start = pos.left;
+        const top_start = pos.top;
+        const left_end = pos.left + size.w;
+        const top_end = pos.top + size.h;
+
+        console.log(clientY, top_start, top_end);
 
         if (Math.abs(clientX - left_end) < 10) { // border right
             setCursor('col-resize')
@@ -76,7 +79,7 @@ export default function Win({ children, x, y, width, height, title, lock, resize
                     }))
                     setPos(oldPos => ({
                         top: oldPos.top,
-                        left: (Number(pos.left.slice(0, -2)) + (ww - left_end + window.mouseX)) + "px"
+                        left: (pos.left + (ww - left_end + window.mouseX))
                     }))
                 } else {
                     window.resize_window = null
@@ -106,15 +109,17 @@ export default function Win({ children, x, y, width, height, title, lock, resize
     }
 
     return (
-        <div
+        <animated.div
             onMouseMove={handel_window_mouse_move}
-            className={`window ${mousePressed && !lock?"":"up-n-down"}`} style={{
-                top: pos.top,
+            className={`window ${mousePressed && !lock ? "" : "animate-window"}`} style={{
+                ...animation_styles,
+                top: animation_styles.top.to(v => (animation_styles.top.isAnimating ? v : pos.top)),
                 left: pos.left,
                 width: size.w,
-                height: size.h,
+                height: animation_styles.height.to(v => (animation_styles.height.isAnimating ? v : size.h)),
                 fontSize: `min( 1rem ,${size.w / 20}px)`,
-                cursor
+                overflowY: 'hidden',
+                cursor,
             }}>
             <div
                 draggable={false}
@@ -129,9 +134,9 @@ export default function Win({ children, x, y, width, height, title, lock, resize
                     <span>{win_title}</span>
                 </div>
             </div>
-            <div className="win-body">
+            <div className="win-body" style={body_style}>
                 {children}
             </div>
-        </div>
+        </animated.div>
     )
 }

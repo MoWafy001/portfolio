@@ -5,6 +5,7 @@
 body{
     background: #111;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-y: hidden;
 }
 
 .window{
@@ -80,8 +81,9 @@ body{
 .page-heading{
     font-size: 2em;
     margin-bottom: 0.5em;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: lighter;
+    text-align: center;
 }
 
 .page-button{
@@ -101,15 +103,15 @@ body{
     color: #eee;
 }
 
-.up-n-down{
-    animation-name: upndown;
+.animate-window{
+    animation-name: animateWindow;
     animation-duration: 2s;
     animation-timing-function:ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-@keyframes upndown {
+@keyframes animateWindow {
     0%{
         transform: translateY(0);
     }
