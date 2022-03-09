@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { animated } from 'react-spring';
 
-export default function Win({ children, x, y, width, height, title, lock, resizeable, body_style, animation_styles }) {
+export default function Win({ children, x, y, width, height, title, lock, resizeable, body_style, animation_styles, handelClose }) {
     if (lock === undefined) lock = false
 
+    if(!handelClose) handelClose = ()=>{}
 
     const page_height = window.innerHeight;
     const page_width = window.innerWidth;
@@ -50,7 +51,6 @@ export default function Win({ children, x, y, width, height, title, lock, resize
         const left_end = pos.left + size.w;
         const top_end = pos.top + size.h;
 
-        console.log(clientY, top_start, top_end);
 
         if (Math.abs(clientX - left_end) < 10) { // border right
             setCursor('col-resize')
@@ -128,13 +128,13 @@ export default function Win({ children, x, y, width, height, title, lock, resize
                 onMouseMove={handel_move}
                 className="win-head">
                 <div className="win-ops">
-                    <div className='win-close'></div>
+                    <div onClick={handelClose} className='win-close'></div>
                 </div>
                 <div className="win-title">
                     <span>{win_title}</span>
                 </div>
             </div>
-            <div className="win-body" style={body_style}>
+            <div className="win-body" style={{overflowY:'auto',...body_style}}>
                 {children}
             </div>
         </animated.div>

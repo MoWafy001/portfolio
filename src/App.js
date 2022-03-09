@@ -1,63 +1,69 @@
-import { useState } from "react";
-import { Transition, animated, easings } from "react-spring";
+import { useState } from 'react'
 
-import Win from "./Win";
 
-const width = window.innerWidth / 4;
-const height = width * 3 / 4
-
-const centerX = window.innerWidth / 2 - width / 2
-const centerY = window.innerHeight / 2 - height / 2
-
+import Welcome from "./Welcome";
+import Info from './Info';
+import Navigate from './Navigate';
 
 function App() {
 
-  const [welcome, setWelcome] = useState(true);
+  const [windows, setWindows] = useState({
+    welcome: true, navigate: false, info: false,
+    links: false, skills: false, projects: false,
+    education: false, experience: false
+  })
+
+  const updateWindows = newWindows => (
+    () => {
+      setWindows(o => {
+        const nw = { ...o, ...newWindows }
+        if (!Object.values(nw).includes(true)) nw.welcome = true
+        return nw
+      })
+    }
+  )
 
   return (
     <div style={{ overflowX: 'auto' }}>
 
-      <Transition
-        items={welcome}
-        from={{ opacity: 0, top: centerY * 4, height: height / 4 }}
-        enter={{ opacity: 1, top: centerY, height }}
-        leave={{ opacity: 0, top: centerY, height: height / 4 }}
-        config={{
-          duration: 1000,
-          easing: easings.easeOutBack,
-        }}
-      >
-        {(props, isWelcome) => (
+      <Welcome show={windows.welcome}
+        handelClose={updateWindows({ welcome: false })}
+        buttons={{
+          handelNext: updateWindows({ welcome: false, info: true })
+        }} />
 
-          <>
-            {isWelcome ? (
-              <Win animation_styles={props} title="test1" x={centerX} y={centerY} width={width} height={height} lock resizeable>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>
-                  <span className="page-heading">on</span>
-                  <button onClick={() => setWelcome(false)} className="page-button">start</button>
-                </div>
-              </Win>
-            ) : (
+      <Info show={windows.info}
+        handelClose={updateWindows({ info: false })}
+        buttons={{
+          handelNext: updateWindows({ info: false }),
+          handelNavigate: updateWindows({ info: false, navigate: true })
+        }} />
 
-              <Win animation_styles={props} title="test1" x={centerX} y={centerY} width={width} height={height} body_style={{
-                background: '#444',
-                color: '#fff'
-              }} lock resizeable>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>
-                  <span className="page-heading">off</span>
-                  <button onClick={() => setWelcome(true)} className="page-button">start</button>
-                </div>
-              </Win>
-            )
-            }
-          </>
-
-        )}
-      </Transition>
-
+      <Navigate show={windows.navigate}
+        handelClose={updateWindows({ navigate: false })}
+        buttons={{
+          handelNext: updateWindows({ navigate: false }),
+          info: updateWindows({ info: true }),
+          links: updateWindows({ links: true }),
+          skills: updateWindows({ skills: true }),
+          projects: updateWindows({ projects: true }),
+          education: updateWindows({ education: true }),
+          experience: updateWindows({ experience: true }),
+        }} />
 
     </div>
   );
 }
 
 export default App;
+
+/*
+  Windows:
+    - Welcome #
+    - Info #
+    - Skills
+    - Education
+    - Certificates
+    - Projects
+    - Links
+*/
