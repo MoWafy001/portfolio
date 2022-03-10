@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Welcome from "./Welcome";
 import Info from './Info';
 import Navigate from './Navigate';
+import Links from './Links';
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
       <Info show={windows.info}
         handelClose={updateWindows({ info: false })}
         buttons={{
-          handelNext: updateWindows({ info: false }),
+          handelNext: updateWindows({ info: false, links: true }),
           handelNavigate: updateWindows({ info: false, navigate: true })
         }} />
 
@@ -49,6 +50,13 @@ function App() {
           projects: updateWindows({ projects: true }),
           education: updateWindows({ education: true }),
           experience: updateWindows({ experience: true }),
+        }} />
+
+      <Links show={windows.links}
+        handelClose={updateWindows({ links: false })}
+        buttons={{
+          handelNext: updateWindows({ links: false }),
+          handelBack: updateWindows({ links: false, info: true })
         }} />
 
     </div>

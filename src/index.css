@@ -164,14 +164,22 @@ body {
 }
 
 .list ul li {
-    border: 1px solid dodgerblue;
+    --bg: #fff;
+    --brd: #1e90ff;
+    --sdw: #1e90ff44;
+    border: 1px solid var(--brd);
     padding: 0.5em 1em;
     margin: 0;
     margin-bottom: 1em;
-    box-shadow: 0.5em 0.5em #1e90ff44;
-    color: dodgerblue;
+    box-shadow: 0.5em 0.5em var(--sdw);
+    color: var(--brd);
+    background: var(--bg);
 }
 .list ul li:hover{
-    background: dodgerblue;
-    border-color: dodgerblue;
+    background: var(--brd);
+    color: var(--bg);
+    border-color: var(--brd);
+}
+.list a{
+    text-decoration: none;
 }

@@ -30,8 +30,6 @@ export default function Info({ show, handelClose, buttons: { handelNext, handelN
                         margin: '0 auto',
                         boxShadow: '1em 1em #000',
                         aspectRatio: '1/1',
-                        opacity: '0.2',
-                        filter: 'blur(10px)'
                     }} src="mePic.png" alt="profile pic" />
 
                     <p style={{
@@ -47,7 +45,7 @@ export default function Info({ show, handelClose, buttons: { handelNext, handelN
                         gap: '1em'
                     }}>
                         <button onClick={handelNavigate} className="page-button">Navigate</button>
-                        <button onClick={handelNext} className="page-button">Next</button>
+                        <button onClick={handelNext} className="page-button">Next (Links)</button>
                     </div>
                 </Win>
             )}
