@@ -5,6 +5,7 @@ import Welcome from "./Welcome";
 import Info from './Info';
 import Navigate from './Navigate';
 import Links from './Links';
+import Skills from './Skills';
 
 function App() {
 
@@ -55,8 +56,15 @@ function App() {
       <Links show={windows.links}
         handelClose={updateWindows({ links: false })}
         buttons={{
-          handelNext: updateWindows({ links: false }),
+          handelNext: updateWindows({ links: false, skills: true }),
           handelBack: updateWindows({ links: false, info: true })
+        }} />
+
+      <Skills show={windows.skills}
+        handelClose={updateWindows({ skills: false })}
+        buttons={{
+          handelNext: updateWindows({ skills: false }),
+          handelBack: updateWindows({ skills: false, links: true })
         }} />
 
     </div>

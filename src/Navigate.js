@@ -3,7 +3,6 @@ import { Transition, easings } from "react-spring";
 import Win from "./Win";
 
 export default function Navigate({ show, handelClose, buttons: {
-    handelNext,
     info, links, skills, projects, education, experience
 } }) {
 
