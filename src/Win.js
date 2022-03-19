@@ -111,7 +111,7 @@ export default function Win({ children, x, y, width, height, title, lock, resize
     return (
         <animated.div
             onMouseMove={handel_window_mouse_move}
-            className={`window ${mousePressed && !lock ? "" : "animate-window"}`} style={{
+            className={`window sketchy ${mousePressed && !lock ? "" : "animate-window"}`} style={{
                 ...animation_styles,
                 top: animation_styles.top.to(v => (animation_styles.top.isAnimating ? v : pos.top)),
                 left: pos.left,
@@ -126,11 +126,11 @@ export default function Win({ children, x, y, width, height, title, lock, resize
                 onMouseDown={() => setMousePressed(true)}
                 onMouseUp={() => setMousePressed(false)}
                 onMouseMove={handel_move}
-                className="win-head">
+                className="win-head sketchy">
                 <div className="win-ops">
                     <div onClick={handelClose} className='win-close'></div>
                 </div>
-                <div className="win-title">
+                <div className="win-title sketchy">
                     <span>{win_title}</span>
                 </div>
             </div>

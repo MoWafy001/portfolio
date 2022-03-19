@@ -24,12 +24,8 @@ export default function Info({ show, handelClose, buttons: { handelNext, handelN
             {(props, s) => (
                 s && <Win body_style={{ fontSize: '1em', display: 'flex', justifyContent: 'flex-start', padding: '1rem', flexDirection: 'column', gap: '1em' }} handelClose={handelClose} animation_styles={props} title="Info" x={x} y={y} width={width} height={height} resizeable>
 
-                    <img className="noselect" draggable={false} style={{
-                        border: '2px solid #222',
-                        width: 'min(50%, 20rem)',
-                        margin: '0 auto',
-                        boxShadow: '1em 1em #000',
-                        aspectRatio: '1/1',
+                    <img className="noselect profpic" draggable={false} style={{
+                        
                     }} src="mePic.png" alt="profile pic" />
 
                     <p style={{
