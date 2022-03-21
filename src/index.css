@@ -218,7 +218,7 @@ body {
     width: 100%;
 }
 
-.skills .cell {
+.cell {
     --c: #222;
     --sc: #2224;
     --bg: #fff;
@@ -234,7 +234,7 @@ body {
     transition: 300ms;
 }
 
-.skills .cell:hover {
+.cell:hover {
     background: var(--c);
     border-color: var(--c);
     color: var(--bg);
@@ -255,4 +255,53 @@ body {
     filter: saturate(1.3);
     border-color: rgb(204, 85, 85);
     box-shadow: 0.5em 0.5em #b329b38e;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.projects .cell img {
+    width: 100%;
+    border: 2px solid #333;
+    align-self: 1/1;
+}
+
+.projects .cell .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.projects .cell span.t {
+    display: block;
+    margin: auto;
+}
+
+.projects a {
+    color: unset;
+    text-decoration: none;
+}
+
+.projects .cell:hover {
+    background: var(--c);
+    border-color: var(--c);
+    color: var(--bg);
+    transform: translateY(-10%);
+}
+
+.tag {
+    display: block;
+    width: fit-content;
+    font-weight: lighter;
+    font-size: 0.7em;
+    padding: 0.2em 0.5em;
+    border-radius: 50%/20%;
+    margin-right: auto;
 }

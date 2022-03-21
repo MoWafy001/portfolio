@@ -4,8 +4,8 @@ import Win from "./Win";
 
 export default function Info({ show, handelClose, buttons: { handelNext, handelNavigate } }) {
 
-    const height = window.innerHeight * 0.7;
-    const width = height * 0.8;
+    const height = window.innerHeight * 0.72;
+    const width = height * 0.7;
 
     const x = window.innerWidth / 2 - width / 2
     const y = window.innerHeight / 2 - height / 2
