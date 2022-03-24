@@ -13,6 +13,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm install
       - run: npm run build
-      - run: git add build
       - run: git branch add pages
       - run: git push pages
