@@ -13,15 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{secrets.TOKEN}}
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install
+      - run: npm ci
       - run: npm run build
-      - run : git config --global user.email "wafy123445@gmail.com"
-      - run : git config --global user.name "Mohamed Wafy"
-      - run: git add -f build
-      - run: git commit -m "Deploy a new build"
-      - run: git push origin pages
+      
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
