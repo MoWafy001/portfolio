@@ -7,13 +7,14 @@ import Navigate from './Navigate';
 import Links from './Links';
 import Skills from './Skills';
 import Projects from './Projects';
+import Education from './Education';
 
 function App() {
 
   const [windows, setWindows] = useState({
     welcome: true, navigate: false, info: false,
     links: false, skills: false, projects: false,
-    education: false, experience: false
+    education: false
   })
 
   const updateWindows = newWindows => (
@@ -71,8 +72,15 @@ function App() {
       <Projects show={windows.projects}
         handelClose={updateWindows({ projects: false })}
         buttons={{
-          handelNext: updateWindows({ projects: false }),
+          handelNext: updateWindows({ projects: false, education: true }),
           handelBack: updateWindows({ projects: false, skills: true })
+        }} />
+
+      <Education show={windows.education}
+        handelClose={updateWindows({ education: false })}
+        buttons={{
+          handelNext: updateWindows({ education: false, navigate: true }),
+          handelBack: updateWindows({ education: false, projects: true })
         }} />
 
     </div>

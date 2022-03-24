@@ -49,7 +49,7 @@ export default function Projects({ show, handelClose, buttons: { handelNext, han
 
                     <div className="projects">
                         {projects.map(p => (
-                            <a href={p.link} target="_blank" className="cell">
+                            <a href={p.link} target="_blank" rel="noreferrer" className="cell">
                                 {p.img ?
                                     <div style={{display:'flex', flexDirection:'column', height:'100%'}}>
                                         <img src={p.img} alt="img" />

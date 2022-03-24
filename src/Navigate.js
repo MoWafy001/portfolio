@@ -41,7 +41,6 @@ export default function Navigate({ show, handelClose, buttons: {
                             <li onClick={skills} className="page-button">Skills</li>
                             <li onClick={projects} className="page-button">Projects</li>
                             <li onClick={education} className="page-button">Education</li>
-                            <li onClick={experience} className="page-button">Experience</li>
                         </ul>
                     </div>
                 </Win>

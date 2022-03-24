@@ -235,10 +235,10 @@ body {
 }
 
 .cell:hover {
-    background: var(--c);
+    background: #ff3;
     border-color: var(--c);
-    color: var(--bg);
-    transform: translateY(-10%);
+    box-shadow: 0.5em 0.5em #ff69b488;
+    transform: translateY(-5%);
 }
 
 .profpic {
@@ -289,13 +289,6 @@ body {
     text-decoration: none;
 }
 
-.projects .cell:hover {
-    background: var(--c);
-    border-color: var(--c);
-    color: var(--bg);
-    transform: translateY(-10%);
-}
-
 .tag {
     display: block;
     width: fit-content;
@@ -304,4 +297,41 @@ body {
     padding: 0.2em 0.5em;
     border-radius: 50%/20%;
     margin-right: auto;
+}
+
+.certs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.certs .cell{
+    max-width: 40%;
+}
+
+.certs .cell img {
+    width: 100%;
+    border: 2px solid #333;
+    align-self: 1/1;
+    background: #fff;
+}
+
+.certs .cell .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.certs .cell span.t {
+    display: block;
+    margin: auto;
+}
+
+.certs a {
+    color: unset;
+    text-decoration: none;
 }
