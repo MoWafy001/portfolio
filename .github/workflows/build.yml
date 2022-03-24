@@ -20,6 +20,6 @@ jobs:
           node-version: '14'
       - run: npm install
       - run: npm run build
-      - run: git fetch
       - run: git add -f build
+      - run: git commit -m "Deploy a new build"
       - run: git push origin pages
