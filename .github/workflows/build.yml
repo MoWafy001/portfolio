@@ -21,6 +21,5 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: git fetch
-      - run: rm .gitignore
-      - run: git add build
-      - run: git push pages
+      - run: git add -f build
+      - run: git push origin pages
