@@ -18,14 +18,14 @@ jobs:
           node-version: '14'
 
       - name: Modify package.json 
-        run |
+        run: |
           export home_url="$(cat pages_url.txt)"
           sed '2a\  "homepage": "'$home_url'",' package.json > new_p.json
           rm package.json
           mv new_p.json package.json
       
       - name: Build
-        run |
+        run: |
           npm ci
           npm run build
       
