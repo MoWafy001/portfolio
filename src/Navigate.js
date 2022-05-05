@@ -36,7 +36,7 @@ export default function Navigate({ show, handelClose, buttons: {
 
                     <div className="list">
                         <ul>
-                            <li onClick={info} className="page-button">Info</li>
+                            <li onClick={info} className="page-button">Who am I ?</li>
                             <li onClick={links} className="page-button">Links/Contacts</li>
                             <li onClick={skills} className="page-button">Skills</li>
                             <li onClick={projects} className="page-button">Projects</li>

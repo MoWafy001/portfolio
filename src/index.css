@@ -235,9 +235,9 @@ body {
 }
 
 .cell:hover {
-    background: #ff3;
+    background: rgba(80, 115, 220, 0.756);
     border-color: var(--c);
-    box-shadow: 0.5em 0.5em #ff69b488;
+    box-shadow: 0.5em 0.5em #000087c8;
     transform: translateY(-5%);
 }
 

@@ -1,3 +1,4 @@
+import { isCursorAtEnd } from "@testing-library/user-event/dist/utils";
 import { Transition, easings } from "react-spring";
 
 import Win from "./Win";
@@ -11,19 +12,17 @@ export default function Projects({ show, handelClose, buttons: { handelNext, han
     const y = window.innerHeight / 2 - height / 2
 
     const projects = [
-        { tag: 'NodeJS | SocketIO', title: 'The Royal Game of Ur', img: 'rg.png', link: 'https://github.com/MoWafy001/the-royal-game-of-ur', },
-        { tag: 'NodeJS | SocketIO', title: 'Temp Group Chat', img: null, link: 'https://github.com/MoWafy001/temp-group-chat', },
-        { tag: 'React', title: 'My Reads', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjames-priest.github.io%2Freactnd-project-myreads%2Fassets%2Fimages%2Fp1-small.jpg&f=1&nofb=1', link: 'https://github.com/MoWafy001/reactnd-project-myreads-starter', },
-        { tag: 'Flask', title: 'Heart Diseases Detector', img: null, link: 'https://github.com/MoWafy001/Detection-of-Heart-Diseases', },
-        { tag: 'Flask', title: 'DrSmart Backend ', img: null, link: 'https://github.com/DrSmartGDSC/DrSmart-Backend', },
-        { tag: 'PHP', title: 'Time Tracker', img: 'tt.webp', link: 'https://github.com/MoWafy001/time-tracker', },
-        { tag: 'NodeJS | PeerJS', title: 'Zoom Clone', img: 'wc.webp', link: 'https://github.com/MoWafy001/zoom-clone-2.0', },
-        { tag: 'JS', title: 'Pomodoro timer', img: 'pt.png', link: 'https://github.com/MoWafy001/Pomodoro-Timer', },
-        { tag: 'JS', title: 'Spelling Practice', img: 'sp.png', link: 'https://github.com/MoWafy001/spelling-practice', },
-        { tag: 'NodeJS', title: 'Anonymous Questions', img: null, link: 'https://github.com/MoWafy001/anonymous-questions', },
-        { tag: 'Flask', title: 'Coffee Shop', img: null, link: 'https://github.com/MoWafy001/coffee_shop_project', },
-        { tag: 'Flask', title: 'Trivia', img: null, link: 'https://github.com/MoWafy001/trivia', },
-        { tag: 'Flask', title: 'Fyyur', img: 'fy.png', link: 'https://github.com/MoWafy001/fyyur', },
+        { tag: 'Python | TensorFlow | Pytorch', title: 'Self driving car in Egypt', img: null, link: 'https://github.com/AhPro7/self-driving-car-in-egypt', },
+        { tag: 'Python | Pytorch', title: 'Is This a Car ?', img: 'IsCar.png', link: 'https://github.com/AhPro7/self-driving-car-in-egypt/tree/main/Is%20this%20a%20car%20_', },
+        { tag: 'Python | TensorFlow', title: 'Where am I ?', img: 'WHere.png', link: 'https://github.com/MoWafy001/reactnd-project-myreads-starter', },
+        { tag: 'Python', title: 'Heart Diseases Detector', img: null, link: 'https://www.kaggle.com/code/ahmedhaytham/heart-disease-eda-93', },
+        { tag: 'Python', title: 'HUMAN POSE ESTIMATION', img: 'Human.png', link:null, },
+        { tag: 'Python', title: 'Game Sales Analysis', img: 'Game.png', link: 'https://www.kaggle.com/code/ahmedhaytham/game-sales-analysis', },
+        { tag: 'Python', title: 'medical-appointment', img: 'med.png', link: 'https://www.kaggle.com/code/ahmedhaytham/medical-appointment-no-shows-0', },
+        { tag: 'Python | TensorFlow', title: 'Chest X-Ray Images', img: 'che.png', link: 'https://www.kaggle.com/code/ahmedhaytham/chest-x-ray-images-pneumonia-with-new-class', },
+        { tag: 'Python | TensorFlow', title: 'DR.Smart', img: 'dr.smart.png', link: 'https://github.com/DrSmartGDSC', },
+        { tag: 'Tableau', title: 'Divy analysis', img: 'dash.jpeg', link: '', },
+        { tag: 'Python', title: 'Human Activity Recognition', img: null, link: 'https://github.com/AhPro7/Human-Activity-Recognition-with-Smartphones_final', },
     ]
 
     return (
