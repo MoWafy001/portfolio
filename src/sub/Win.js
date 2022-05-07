@@ -37,9 +37,20 @@ export default function Win({ children, x, y, width, height, title, lock, resize
         if (cursor !== 'default') return
         const { mouseX, mouseY } = window;
 
+        let new_left = mouseX - window.Xoff
+        let new_top = mouseY - window.Yoff
+
+        if(new_left < 0) new_left = 0
+        if(new_top < 0 ) new_top = 0
+
+        if(new_left + size.w > window.innerWidth)
+            new_left = window.innerWidth - size.w
+        if(new_top + size.h > window.innerHeight)
+            new_top = window.innerHeight - size.h
+
         setPos({
-            left: (mouseX - window.Xoff),
-            top: (mouseY - window.Yoff),
+            left: (new_left),
+            top: (new_top),
         })
     }
 
