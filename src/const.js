@@ -14,8 +14,8 @@ export const LINKS = [
 
 
 export const SKILLS = [
-    'NodeJS', 'Flask','Djagno', 'AWS','Python', 'JavaScript','PHP', 'API Development',
-    'SQL', 'NoSQL','Google', 'React','CSS', 'Java','Bootstrap', 'Problem Solving',
+    'NodeJS', 'Flask', 'Djagno', 'AWS', 'Python', 'JavaScript', 'PHP', 'API Development',
+    'SQL', 'NoSQL', 'Google', 'React', 'CSS', 'Java', 'Bootstrap', 'Problem Solving',
     'Web Scraping', 'jQuery'
 ]
 
