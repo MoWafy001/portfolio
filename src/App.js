@@ -1,21 +1,17 @@
 import { useState } from 'react'
 
 
-import Welcome from "./Welcome";
-import Info from './Info';
-import Navigate from './Navigate';
-import Links from './Links';
-import Skills from './Skills';
-import Projects from './Projects';
-import Education from './Education';
+import Welcome from "./windows/Welcome";
+import Info from './windows/Info';
+import Navigate from './windows/Navigate';
+import Links from './windows/Links';
+import Skills from './windows/Skills';
+import Projects from './windows/Projects';
+import Education from './windows/Education';
 
 function App() {
 
-  const [windows, setWindows] = useState({
-    welcome: true, navigate: false, info: false,
-    links: false, skills: false, projects: false,
-    education: false
-  })
+  const [windows, setWindows] = useState({welcome: true})
 
   const updateWindows = newWindows => (
     () => {

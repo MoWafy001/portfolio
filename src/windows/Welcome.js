@@ -1,4 +1,4 @@
-import CustomWindow from "./CustomWindow";
+import CustomWindow from "../sub/CustomWindow";
 
 export default function Welcome({ show, handelClose, buttons: { handelNext } }) {
 

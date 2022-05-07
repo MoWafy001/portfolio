@@ -1,4 +1,5 @@
-import CustomWindow from "./CustomWindow";
+import CustomWindow from "../sub/CustomWindow";
+import { SKILLS } from "../const";
 
 export default function Skills({ show, handelClose, buttons: { handelNext, handelBack } }) {
 
@@ -21,24 +22,9 @@ export default function Skills({ show, handelClose, buttons: { handelNext, hande
             }}>Skills</p>
 
             <div className="skills">
-                <span className="cell">NodeJS</span>
-                <span className="cell">Flask</span>
-                <span className="cell">Djagno</span>
-                <span className="cell">AWS</span>
-                <span className="cell">Python</span>
-                <span className="cell">JavaScript</span>
-                <span className="cell">PHP</span>
-                <span className="cell">API Development</span>
-                <span className="cell">SQL</span>
-                <span className="cell">NoSQL</span>
-                <span className="cell">Google Cloud</span>
-                <span className="cell">React</span>
-                <span className="cell">CSS</span>
-                <span className="cell">Java</span>
-                <span className="cell">Bootstrap</span>
-                <span className="cell">Problem Solving</span>
-                <span className="cell">Web Scraping</span>
-                <span className="cell">jQuery</span>
+                {SKILLS.map(skill => (
+                    <span className="cell">{skill}</span>
+                ))}
             </div>
 
 

@@ -1,4 +1,5 @@
-import CustomWindow from "./CustomWindow";
+import CustomWindow from "../sub/CustomWindow";
+import { INFO } from '../const'
 
 export default function Info({ show, handelClose, buttons: { handelNext, handelNavigate } }) {
 
@@ -14,14 +15,14 @@ export default function Info({ show, handelClose, buttons: { handelNext, handelN
         <CustomWindow title='Info' x={x} y={y} body_style={body_style} width={width} height={height} show={show} handelClose={handelClose}>
             <img className="noselect profpic" draggable={false} style={{
 
-            }} src="mePic.jpg" alt="profile pic" />
+            }} src={INFO.pic} alt="profile pic" />
 
             <p style={{
                 border: '2px solid #222',
                 padding: '1em',
                 boxShadow: '1em 1em #000',
                 marginRight: '1em'
-            }}>Full Stack Web Developer, and a Computer Science student with experience in Frontend Development, Backend Development, and some cloud.</p>
+            }}>{INFO.about}</p>
 
             <div style={{
                 display: 'flex',

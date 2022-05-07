@@ -1,4 +1,5 @@
-import CustomWindow from "./CustomWindow";
+import CustomWindow from "../sub/CustomWindow";
+import { CERTIFICATES } from "../const";
 
 export default function Education({ show, handelClose, buttons: { handelNext, handelBack } }) {
 
@@ -7,12 +8,6 @@ export default function Education({ show, handelClose, buttons: { handelNext, ha
 
     const x = window.innerWidth / 2 - width / 2
     const y = window.innerHeight / 2 - height / 2
-
-    const certs = [
-        { tag: 'React - Udacity', title: 'React Developement Cross-Skilling Nanodegree', img: 'https://s3-us-west-2.amazonaws.com/udacity-printer/production/certificates/82033ead-b043-4f86-80d7-6aff80be062a.svg', link: 'https://graduation.udacity.com/confirm/TA9ZX9QD', },
-        { tag: 'Flask - API Developement - Udacity', title: 'Advanced Web Development Nanodegree', img: "https://s3-us-west-2.amazonaws.com/udacity-printer/production/certificates/a810afad-78ca-48b5-aa4c-683a4caea70b.svg", link: 'https://graduation.udacity.com/confirm/PANDNREA', },
-        { tag: 'NodeJS - JavaScript - Udacity', title: 'Web Development Professional Nanodegree', img: 'https://s3-us-west-2.amazonaws.com/udacity-printer/production/certificates/a93eee33-cf66-4953-8fbf-88459b94c17b.svg', link: 'https://graduation.udacity.com/confirm/FFGDWSHT', },
-    ]
 
     const body_style = { fontSize: '1em', display: 'flex', justifyContent: 'flex-start', padding: '1rem', flexDirection: 'column', gap: '1em' }
 
@@ -26,18 +21,18 @@ export default function Education({ show, handelClose, buttons: { handelNext, ha
             }}>Certs</p>
 
             <div className="certs">
-                {certs.map(p => (
-                    <a href={p.link} target="_blank" rel="noreferrer" className="cell">
-                        {p.img ?
+                {CERTIFICATES.map(c => (
+                    <a key={c.tag + c.title} href={c.link} target="_blank" rel="noreferrer" className="cell">
+                        {c.img ?
                             <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                                <img src={p.img} alt="img" />
-                                <span className='t'>{p.title}</span>
-                                <span className="tag">{p.tag}</span>
+                                <img src={c.img} alt="img" />
+                                <span className='t'>{c.title}</span>
+                                <span className="tag">{c.tag}</span>
                             </div>
                             :
                             <div className="cover">
-                                <span className='t'>{p.title}</span>
-                                <span className="tag">{p.tag}</span>
+                                <span className='t'>{c.title}</span>
+                                <span className="tag">{c.tag}</span>
                             </div>
                         }
                     </a>

@@ -1,4 +1,4 @@
-import CustomWindow from "./CustomWindow";
+import CustomWindow from "../sub/CustomWindow";
 
 export default function Navigate({ show, handelClose, buttons: {
     info, links, skills, projects, education
