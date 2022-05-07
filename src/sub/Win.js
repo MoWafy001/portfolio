@@ -25,8 +25,11 @@ export default function Win({ children, x, y, width, height, title, lock, resize
     const handel_move = e => {
         if (mousePressed)
             window.move_window = move_window
-        else
+        else{
             window.move_window = null
+            window.Xoff = window.mouseX - pos.left;
+            window.Yoff = window.mouseY - pos.top;
+        }
     }
 
     const move_window = () => {
@@ -35,16 +38,15 @@ export default function Win({ children, x, y, width, height, title, lock, resize
         const { mouseX, mouseY } = window;
 
         setPos({
-            left: (mouseX - size.w / 2),
-            top: (mouseY - 20),
+            left: (mouseX - window.Xoff),
+            top: (mouseY - window.Yoff),
         })
     }
 
     const handel_window_mouse_move = e => {
         if (!resizeable) return
-
+        
         const { clientX, clientY } = e;
-
 
         const left_start = pos.left;
         const top_start = pos.top;
