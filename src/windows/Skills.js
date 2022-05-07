@@ -3,16 +3,20 @@ import { SKILLS } from "../const";
 
 export default function Skills({ show, handelClose, buttons: { handelNext, handelBack } }) {
 
-    const height = window.innerHeight * 0.7;
-    const width = height * 1.5;
+    const calcSize = () => {
+        const height = window.innerHeight * 0.7;
+        const width = height * 1.5;
 
-    const x = window.innerWidth / 2 - width / 2
-    const y = window.innerHeight / 2 - height / 2
+        const x = window.innerWidth / 2 - width / 2
+        const y = window.innerHeight / 2 - height / 2
+
+        return [width, height, x, y]
+    }
 
     const body_style = { fontSize: '1em', display: 'flex', justifyContent: 'flex-start', padding: '1rem', flexDirection: 'column', gap: '1em' }
 
     return (
-        <CustomWindow title='skills' x={x} y={y} body_style={body_style} width={width} height={height} show={show} handelClose={handelClose}>
+        <CustomWindow title='skills' calcSize={calcSize} body_style={body_style} show={show} handelClose={handelClose}>
 
             <p style={{
                 border: '2px solid #222',
@@ -23,7 +27,7 @@ export default function Skills({ show, handelClose, buttons: { handelNext, hande
 
             <div className="skills">
                 {SKILLS.map(skill => (
-                    <span className="cell">{skill}</span>
+                    <span key={skill.anchor + skill} className="cell">{skill}</span>
                 ))}
             </div>
 

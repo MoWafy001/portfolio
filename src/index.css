@@ -94,7 +94,7 @@ body {
     transition: 300ms;
 }
 
-.win-close:hover {
+.win-close:hover, .win-close:active {
     filter: brightness(1.5);
     transform: scale(1.5);
 }
@@ -148,7 +148,7 @@ body {
     transition: 100ms;
 }
 
-.page-button:hover {
+.page-button:hover, .page-button:active {
     border-color: #000;
     background: #222;
     color: #fff;
@@ -200,7 +200,7 @@ body {
     transition: 300ms;
 }
 
-.list ul li:hover {
+.list ul li:hover,  ul li:active {
     background: var(--brd);
     color: var(--bg);
     border-color: var(--brd);
@@ -233,7 +233,8 @@ body {
     transition: 300ms;
 }
 
-.cell:hover {
+.cell:hover, 
+.cell:active {
     background: #ff3;
     border-color: var(--c);
     box-shadow: 0.5em 0.5em #ff69b488;
@@ -248,7 +249,8 @@ body {
     transition: 300ms;
 }
 
-.profpic:hover {
+.profpic:hover, 
+.profpic:active {
     filter: saturate(1.5);
     border-color: #ff3;
     box-shadow: 0.5em 0.5em #ff69b488;

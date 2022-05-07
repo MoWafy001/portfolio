@@ -3,16 +3,20 @@ import { LINKS } from "../const";
 
 export default function Links({ show, handelClose, buttons: { handelNext, handelBack } }) {
 
-    const height = window.innerHeight * 0.7;
-    const width = height * 0.8;
+    const calcSize = () => {
+        const height = window.innerHeight * 0.7;
+        const width = height * 0.8;
 
-    const x = window.innerWidth / 2 - width / 2
-    const y = window.innerHeight / 2 - height / 2
+        const x = window.innerWidth / 2 - width / 2
+        const y = window.innerHeight / 2 - height / 2
+
+        return [width, height, x, y]
+    }
 
     const body_style = { fontSize: '1em', display: 'flex', justifyContent: 'flex-start', padding: '1rem', flexDirection: 'column', gap: '1em' }
 
     return (
-        <CustomWindow title='Links' x={x} y={y} body_style={body_style} width={width} height={height} show={show} handelClose={handelClose}>
+        <CustomWindow title='Links' calcSize={calcSize} body_style={body_style} show={show} handelClose={handelClose}>
             <div className="list">
                 <ul>
                     {LINKS.map(link => (
