@@ -1,6 +1,4 @@
-import { Transition, easings } from "react-spring";
-
-import Win from "./Win";
+import CustomWindow from "./CustomWindow";
 
 export default function Welcome({ show, handelClose, buttons: { handelNext } }) {
 
@@ -11,24 +9,11 @@ export default function Welcome({ show, handelClose, buttons: { handelNext } }) 
     const y = window.innerHeight / 2 - height / 2
 
     return (
-        <Transition
-            items={show}
-            from={{ opacity: 0, top: y * 4, height: height / 4 }}
-            enter={{ opacity: 1, top: y, height }}
-            leave={{ opacity: 0, top: y * 4, height: height / 4 }}
-            config={{
-                duration: 1000,
-                easing: easings.easeOutBack,
-            }}>
-
-            {(props, s) => (
-                s && <Win handelClose={handelClose} animation_styles={props} title="Welcome" x={x} y={y} width={width} height={height} lock resizeable>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>
-                        <span className="page-heading">Welcome</span>
-                        <button onClick={handelNext} className="page-button">start</button>
-                    </div>
-                </Win>
-            )}
-        </Transition>
+        <CustomWindow title='welcome' x={x} y={y} width={width} height={height} show={show} handelClose={handelClose}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>
+                <span className="page-heading">Welcome</span>
+                <button onClick={handelNext} className="page-button">start</button>
+            </div>
+        </CustomWindow>
     )
 }
