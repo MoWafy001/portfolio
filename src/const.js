@@ -1,5 +1,5 @@
 export const INFO = {
-    pic: 'mePic.jpg',
+    pic: 'MohamedWafy.jpg',
     about: 'Full Stack Web Developer, and a Computer Science student with experience in Frontend Development, Backend Development, and some cloud.'
 }
 
