@@ -1,6 +1,6 @@
 https://mowafy001.github.io/portfolio/MohamedWafy.jpg
-https://mowafy001.github.io/portfolio/Data Manipulation with pandas.png
-https://mowafy001.github.io/portfolio/Image Processing with Keras in Python.png
-https://mowafy001.github.io/portfolio/Intermediate Python.png
-https://mowafy001.github.io/portfolio/Introduction to Deep Learning in Python.png
+https://mowafy001.github.io/portfolio/certs/Data Manipulation with pandas.png
+https://mowafy001.github.io/portfolio/certs/Image Processing with Keras in Python.png
+https://mowafy001.github.io/portfolio/certs/Intermediate Python.png
+https://mowafy001.github.io/portfolio/certs/Introduction to Deep Learning in Python.png
 https://mowafy001.github.io/portfolio/demo.png
