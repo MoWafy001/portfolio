@@ -1,4 +1,4 @@
 ![](./public/demo.png)
 
-# Portfolio
+# Portfolio | Mohamed Wafy
 [link](https://mowafy001.github.io/portfolio/)
