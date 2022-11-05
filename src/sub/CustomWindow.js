@@ -38,12 +38,12 @@ export default function CustomWindow({ title, show, body_style, calcSize, handel
 
     return <Transition
         items={show}
-        from={{ opacity: 0, top: y * 4, height: height / 4 }}
+        from={{ opacity: 0, top: y * 2, height: height / 4 }}
         enter={{ opacity: 1, top: y, height }}
-        leave={{ opacity: 0, top: y * 4, height: height / 4 }}
+        leave={{ opacity: 0, top: y * 2, height: height / 4 }}
         config={{
-            duration: 1000,
-            easing: easings.easeOutBack,
+            duration: 700,
+            easing: easings.easeInOutBack,
         }}>
 
         {(props, s) => (

@@ -1,5 +1,5 @@
 :root {
-    --window-color: #fff;
+    --window-color: #c0c0c0;
 }
 
 ::-webkit-scrollbar {
@@ -44,10 +44,16 @@
 }
 
 body {
-    background: #fff;
-    font-family: 'Handlee', cursive;
-    font-weight: bold;
-    overflow-y: hidden;
+    background: linear-gradient(135deg, #ff6, #f66);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
 .window {
@@ -55,20 +61,18 @@ body {
     display: flex;
     flex-direction: column;
     background: #eee;
-    border: 2px solid #333;
+    border: 1px solid #3336;
+    box-shadow: 0 2px 4px 2px #0006;
     overflow: hidden;
     cursor: nw-resize;
+    border-radius: 5px;
 }
 
-.sketchy {
-    border-width: 3px 2px 3px 3px;
-    border-radius: 2% 4% 2% 5%/10% 95% 100% 15%;
-}
 
 .win-head {
     display: flex;
     flex-direction: row;
-    border-bottom: 2px solid #333;
+    border-bottom: 1px solid #3333;
     background: var(--window-color);
     color: #fff;
     padding: 0.4rem 0;
@@ -84,9 +88,9 @@ body {
 }
 
 .win-ops .win-close {
-    width: 0.5rem;
+    width: 0.51rem;
     height: 0.5rem;
-    background: #d20;
+    background: #f20;
     border-radius: 50%;
     border: 2px solid #333;
     padding: 0;
@@ -101,13 +105,14 @@ body {
 
 .win-title {
     pointer-events: none;
-    padding: 0.2em;
+    padding: 0.1em;
     width: 100%;
     text-align: center;
-    font-weight: bold;
+    font-weight: lighter;
     background: #fff;
-    border: 2px solid #333;
+    border: 1px solid #3333;
     color: #000;
+    border-radius: 10px;
     margin-right: 1.5rem;
 }
 
@@ -127,8 +132,6 @@ body {
 
 .win-body * {
     font-size: 1em;
-    border-width: 3px 2px 3px 3px;
-    border-radius: 2% 4% 2% 5%/10% 95% 100% 15%;
 }
 
 .page-heading {
@@ -139,8 +142,6 @@ body {
 }
 
 .page-button {
-    border-width: 1px 2px 3px 4px;
-    border-radius: 50% 4% 2% 150%/10% 95% 100% 15%;
     outline: none;
     border: 2px solid #222;
     background: #fff;
