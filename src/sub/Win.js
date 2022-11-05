@@ -4,7 +4,7 @@ import { animated } from 'react-spring';
 export default function Win({ children, x, y, width, height, title, lock, resizeable, body_style, animation_styles, handelClose }) {
     if (lock === undefined) lock = false
 
-    if(!handelClose) handelClose = ()=>{}
+    if (!handelClose) handelClose = () => { }
 
     const page_height = window.innerHeight;
     const page_width = window.innerWidth;
@@ -25,7 +25,7 @@ export default function Win({ children, x, y, width, height, title, lock, resize
     const handel_move = e => {
         if (mousePressed)
             window.move_window = move_window
-        else{
+        else {
             window.move_window = null
             window.Xoff = window.mouseX - pos.left;
             window.Yoff = window.mouseY - pos.top;
@@ -33,6 +33,10 @@ export default function Win({ children, x, y, width, height, title, lock, resize
     }
 
     const move_window = () => {
+        if(!window.mousePressed) {
+            window.move_window = null;
+            return;
+        }
         if (lock) return
         if (cursor !== 'default') return
         const { mouseX, mouseY } = window;
@@ -40,12 +44,12 @@ export default function Win({ children, x, y, width, height, title, lock, resize
         let new_left = mouseX - window.Xoff
         let new_top = mouseY - window.Yoff
 
-        if(new_left < 0) new_left = 0
-        if(new_top < 0 ) new_top = 0
+        if (new_left < 0) new_left = 0
+        if (new_top < 0) new_top = 0
 
-        if(new_left + size.w > window.innerWidth)
+        if (new_left + size.w > window.innerWidth)
             new_left = window.innerWidth - size.w
-        if(new_top + size.h > window.innerHeight)
+        if (new_top + size.h > window.innerHeight)
             new_top = window.innerHeight - size.h
 
         setPos({
@@ -56,7 +60,8 @@ export default function Win({ children, x, y, width, height, title, lock, resize
 
     const handel_window_mouse_move = e => {
         if (!resizeable) return
-        
+        if (mousePressed) return
+
         const { clientX, clientY } = e;
 
         const left_start = pos.left;
@@ -65,15 +70,19 @@ export default function Win({ children, x, y, width, height, title, lock, resize
         const top_end = pos.top + size.h;
 
 
-        if (Math.abs(clientX - left_end) < 10) { // border right
+        if (Math.abs(clientX - left_end) < 10 && !window.resize_window) { // border right
             setCursor('col-resize')
 
             window.resize_window = () => {
-                if (window.mousePressed) {
-                    setSize(oldSize => ({
-                        w: window.mouseX - left_start,
-                        h: oldSize.h
-                    }))
+                if (window.mousePressed &&
+                    window.mouseY <= top_end &&
+                    window.mouseY >= top_start
+                ) {
+                    if ((window.mouseX - left_start) >= 150)
+                        setSize(oldSize => ({
+                            w: window.mouseX - left_start,
+                            h: oldSize.h
+                        }))
                 } else {
                     window.resize_window = null
                 }
@@ -81,36 +90,42 @@ export default function Win({ children, x, y, width, height, title, lock, resize
 
         }
 
-        else if (Math.abs(clientX - left_start) < 10) { // border left
+        else if (Math.abs(clientX - left_start) < 10 && !window.resize_window) { // border left
             setCursor('col-resize')
             window.resize_window = () => {
-                if (window.mousePressed) {
+                if (window.mousePressed &&
+                    window.mouseY <= top_end &&
+                    window.mouseY >= top_start
+                ) {
                     const ww = size.w;
-                    setSize(oldSize => ({
-                        w: left_end - window.mouseX,
-                        h: oldSize.h
-                    }))
-                    setPos(oldPos => ({
-                        top: oldPos.top,
-                        left: (pos.left + (ww - left_end + window.mouseX))
-                    }))
+                    if ((left_end - window.mouseX) >= 150) {
+                        setSize(oldSize => ({
+                            w: left_end - window.mouseX,
+                            h: oldSize.h
+                        }))
+                        setPos(oldPos => ({
+                            top: oldPos.top,
+                            left: (pos.left + (ww - left_end + window.mouseX))
+                        }))
+                    }
                 } else {
                     window.resize_window = null
                 }
             }
         }
 
-        else if (Math.abs(clientY - top_end) < 5) { // border bottom
+        else if (Math.abs(clientY - top_end) < 5 && !window.resize_window) { // border bottom
             setCursor('row-resize')
             window.resize_window = () => {
-                if (window.mousePressed) {
-                    setSize(oldSize => ({
-                        w: oldSize.w,
-                        h: window.mouseY - top_start,
-                    }))
-                } else {
-                    window.resize_window = null
-                }
+                if ((window.mouseY - top_start) >= 150)
+                    if (window.mousePressed) {
+                        setSize(oldSize => ({
+                            w: oldSize.w,
+                            h: window.mouseY - top_start,
+                        }))
+                    } else {
+                        window.resize_window = null
+                    }
             }
         }
 
@@ -147,7 +162,7 @@ export default function Win({ children, x, y, width, height, title, lock, resize
                     <span>{win_title}</span>
                 </div>
             </div>
-            <div className="win-body" style={{overflowY:'auto',...body_style}}>
+            <div className="win-body" style={{ overflowY: 'auto', ...body_style }}>
                 {children}
             </div>
         </animated.div>
