@@ -24,7 +24,7 @@ export default function Welcome({ show, handelClose, buttons: { handelNext } }) 
             {(props, s) => (
                 s && <Win handelClose={handelClose} animation_styles={props} title="Welcome Window" x={x} y={y} width={width} height={height} lock resizeable>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>
-                        <span className="page-heading">Welcome to my Protfilo</span>
+                        <span className="page-heading">Welcome</span>
                         <button onClick={handelNext} className="page-button">start</button>
                     </div>
                 </Win>

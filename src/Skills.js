@@ -22,7 +22,7 @@ export default function Skills({ show, handelClose, buttons: { handelNext, hande
             }}>
 
             {(props, s) => (
-                s && <Win body_style={{ fontSize: '1em', display: 'flex', justifyContent: 'flex-start', padding: '1rem', flexDirection: 'column', gap: '1em' }} handelClose={handelClose} animation_styles={props} title="Skills & Tools" x={x} y={y} width={width} height={height} resizeable>
+                s && <Win body_style={{ fontSize: '1em', display: 'flex', justifyContent: 'flex-start', padding: '1rem', flexDirection: 'column', gap: '1em' }} handelClose={handelClose} animation_styles={props} title="Skills" x={x} y={y} width={width} height={height} resizeable>
 
                     <p style={{
                         border: '2px solid #222',
@@ -32,43 +32,32 @@ export default function Skills({ show, handelClose, buttons: { handelNext, hande
                     }}>Skills</p>
 
                     <div className="skills">
-                        <span className="cell">Data Management</span>
-                        <span className="cell">Exploratory Analysis</span>
-                        <span className="cell">Statistical Experimentation</span>
-                        <span className="cell">Model Development</span>
-                        <span className="cell">Coding for Production Environments</span>
-                        <span className="cell">Communication and Reporting</span>
-                        <span className="cell">Problem solving</span>
-                    </div>
-                    
-
-                    <p style={{
-                        border: '2px solid #222',
-                        padding: '0.5em 2em',
-                        boxShadow: '0.5em 0.5em #000',
-                        marginRight: '0.5em'
-                    }}>Tools</p>
-
-                    <div className="skills">
+                        <span className="cell">NodeJS</span>
+                        <span className="cell">Flask</span>
+                        <span className="cell">Djagno</span>
+                        <span className="cell">AWS</span>
                         <span className="cell">Python</span>
-                        <span className="cell">R</span>
-                        <span className="cell">Tableau</span>
-                        <span className="cell">PowerBI</span>
-                        <span className="cell">T_SQL</span>
-                        <span className="cell">Excel</span>
-                        <span className="cell">SAS</span>
-                        <span className="cell">TensorFlow</span>
-                        <span className="cell">Sklearn</span>
-                        <span className="cell">Plotly</span>
-                        <span className="cell">Open CV</span>
-                        <span className="cell">Pytorch</span>
+                        <span className="cell">JavaScript</span>
+                        <span className="cell">PHP</span>
+                        <span className="cell">API Development</span>
+                        <span className="cell">SQL</span>
+                        <span className="cell">NoSQL</span>
+                        <span className="cell">Google Cloud</span>
+                        <span className="cell">React</span>
+                        <span className="cell">CSS</span>
+                        <span className="cell">Java</span>
+                        <span className="cell">Bootstrap</span>
+                        <span className="cell">Problem Solving</span>
+                        <span className="cell">Web Scraping</span>
+                        <span className="cell">jQuery</span>
                     </div>
+
+
                     <div style={{
                         display: 'flex',
                         justifyContent: 'center',
                         gap: '1em'
                     }}>
-                        
                         <button onClick={handelBack} className="page-button">Back (Links)</button>
                         <button onClick={handelNext} className="page-button">Next (Projects)</button>
                     </div>

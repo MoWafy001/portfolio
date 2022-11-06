@@ -22,7 +22,7 @@ export default function Info({ show, handelClose, buttons: { handelNext, handelN
             }}>
 
             {(props, s) => (
-                s && <Win body_style={{ fontSize: '1em', display: 'flex', justifyContent: 'flex-start', padding: '1rem', flexDirection: 'column', gap: '1em' }} handelClose={handelClose} animation_styles={props} title="Who am I ?" x={x} y={y} width={width} height={height} resizeable>
+                s && <Win body_style={{ fontSize: '1em', display: 'flex', justifyContent: 'flex-start', padding: '1rem', flexDirection: 'column', gap: '1em' }} handelClose={handelClose} animation_styles={props} title="Info" x={x} y={y} width={width} height={height} resizeable>
 
                     <img className="noselect profpic" draggable={false} style={{
                         
@@ -33,8 +33,7 @@ export default function Info({ show, handelClose, buttons: { handelNext, handelN
                         padding: '1em',
                         boxShadow: '1em 1em #000',
                         marginRight: '1em'
-                    }}>Hi, I am Ahmed Haytham, a student in the second year of computer science interested in data science and I am doing my best to build a career in it and became a kaggle expert in 2021 and a professional Data Scientist by DataCamp in 2022.
-                    I will make communication between you and the data easier. I'll let the data tell you its secrets</p>
+                    }}>Full Stack Web Developer, and a Computer Science student with experience in Frontend Development, Backend Development, and some cloud.</p>
 
                     <div style={{
                         display: 'flex',

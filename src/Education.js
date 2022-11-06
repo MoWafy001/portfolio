@@ -11,14 +11,9 @@ export default function Education({ show, handelClose, buttons: { handelNext, ha
     const y = window.innerHeight / 2 - height / 2
 
     const projects = [
-        { tag: 'DataCamp', title: 'Professional Data Scientist Certificate', img: 'https://github.com/AhPro7/my-certifications/blob/main/1.Data%20Scientist%20Professional.png?raw=true', link: 'https://www.datacamp.com/certificate/DS0014801924371', },
-        { tag: 'Machine , DeepLearning - IBM ', title: 'IBM Machine Learning', img: "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~63SZZBMZ4T4D/CERTIFICATE_LANDING_PAGE~63SZZBMZ4T4D.jpeg", link: 'https://www.coursera.org/account/accomplishments/professional-cert/63SZZBMZ4T4D', },
-        { tag: 'Udacity', title: 'Advanced Data Analysis', img: 'https://s3-us-west-2.amazonaws.com/udacity-printer/production/certificates/f8383d74-a7b1-4733-9dea-fcfb80225ffa.svg', link: 'https://graduation.udacity.com/confirm/FFGDWSHT', },
-        { tag: 'Machinfy', title: 'Machine learning intership', img: 'https://github.com/AhPro7/my-certifications/blob/main/intership_machinefy.jpg?raw=true', link: '', },
-        { tag: 'DataCamp', title: 'Data Scientist with Python Track', img: 'https://ahpro7.github.io/Ahmed_Haytham/res/Certificates/data_sc.png', link: 'https://www.datacamp.com/certificate/DS0014801924371', },
-        { tag: 'DataCamp', title: 'Machine Learning Scientist with Python Track', img: 'https://ahpro7.github.io/Ahmed_Haytham/res/Certificates/data_ml.png', link: 'https://www.datacamp.com/certificate/DS0014801924371', },
-        { tag: 'DataCamp', title: 'Tableau Fundamentals Track', img: 'https://ahpro7.github.io/Ahmed_Haytham/res/Certificates/data_sc.png', link: 'https://www.datacamp.com/statement-of-accomplishment/track/5cabdd17ac9041f475a1c99e4a06f2229498f02e', },
-        { tag: 'DataCamp', title: 'Data Analyst with SQL Server', img: 'https://ahpro7.github.io/Ahmed_Haytham/res/Certificates/data_an_s.png', link: 'https://www.datacamp.com/statement-of-accomplishment/track/e5c0eeee55e64a5f1ef5d6688eab5e089d50f942', },
+        { tag: 'React - Udacity', title: 'React Developement Cross-Skilling Nanodegree', img: 'https://s3-us-west-2.amazonaws.com/udacity-printer/production/certificates/82033ead-b043-4f86-80d7-6aff80be062a.svg', link: 'https://graduation.udacity.com/confirm/TA9ZX9QD', },
+        { tag: 'Flask - API Developement - Udacity', title: 'Advanced Web Development Nanodegree', img: "https://s3-us-west-2.amazonaws.com/udacity-printer/production/certificates/a810afad-78ca-48b5-aa4c-683a4caea70b.svg", link: 'https://graduation.udacity.com/confirm/PANDNREA', },
+        { tag: 'NodeJS - JavaScript - Udacity', title: 'Web Development Professional Nanodegree', img: 'https://s3-us-west-2.amazonaws.com/udacity-printer/production/certificates/a93eee33-cf66-4953-8fbf-88459b94c17b.svg', link: 'https://graduation.udacity.com/confirm/FFGDWSHT', },
     ]
 
     return (
