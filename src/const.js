@@ -1,6 +1,6 @@
 export const INFO = {
     pic: 'MohamedWafy.jpg',
-    about: 'Full Stack Web Developer, and a Computer Science student with experience in Frontend Development, Backend Development, and some cloud.'
+    about: 'Backend Engineer with expertise in backend development, complemented by a solid understanding of frontend technologies, Linux, and cloud infrastructure. I am a dedicated and ambitious professional with a strong passion for writing clean, efficient, and maintainable code.'
 }
 
 
@@ -16,11 +16,14 @@ export const LINKS = [
 export const SKILLS = [
     'NodeJS', 'Flask', 'Djagno', 'AWS', 'Python', 'JavaScript', 'PHP', 'API Development',
     'SQL', 'NoSQL', 'Google Cloud', 'React', 'CSS', 'Java', 'Bootstrap', 'Problem Solving',
-    'Web Scraping', 'jQuery'
+    'Web Scraping', 'jQuery', 'NestJS',
+'Bash', 'Docker'
 ]
 
 
 export const PROJECTS = [
+{ tag: 'NestJS | NodeJS', title: 'Finairi Accounting', img: 'https://upwork-usw2-prod-agora-file-storage.s3.us-west-2.amazonaws.com/profile/portfolio/thumbnail/9e7acffb7198d04d871ef1ccdc948e29?response-content-disposition=inline%3B%20filename%3D%22image_large%22%3B%20filename%2A%3Dutf-8%27%27image_large&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIHaka2HHDaL%2FA5rvCM6FOLoK8qFreBb%2F0RXWBP3f%2FzrwAiBV5zRtjDMRCWJiyMWc2rWVUd23AbBxdFJxh9qb6HSKnCqQBQhgEAAaDDczOTkzOTE3MzgxOSIMq11ea70mMaOW%2BLirKu0ElFJEATwf6nyEUkOrlJfZwfmxTHSrBDD8mr9ZWyzV3A7FMZUwY53RURA51KufuFJUr6soSSd8hm6r7u9q%2FKGSpklmRTeKcgFzw3Ys%2B7%2BxCO3yV5ICj8e8kvcENNH3IiJtAXXOPUanPB%2B9B%2Bw8IZrn%2BesRdBg5ipNyPK53H1LVazTgp2Coe19PnlbC6QdYmDNUEiabb9Wm9lMvtn8%2FOEnPZLRtFHxsLa0nfAnRju4InrRGfO0dXHANVRsqBV0u7n2ianoDnR0RWDveeS9kWdP2l%2FeTeVgjLh7jKOqiBPbQqaqlDpGU6EM%2B6Fs3mJ0jqYf8QxYPFK7TtgLLqw3DazS0xGs1TJm1gliPwvGJFy%2B8UIVoPzo8nNXiMC7yx4VVmFKQwlOF6K%2FiFFjCDg1scztgCF9p%2FsixnNPd7WUWagNdyFKEbZu5OmG8gR9asAsmbMZ8UIBYs5lbXYIjALeE6PtvzO%2BqNAXY1AvfJNA5LGLfuCTcwK%2BwJvasPw21nVihyg6yNio%2FiM%2B61xsP0KRTckpy5xizk4eI%2FeoJp4I1xAEj%2B8Bz1uMmTQ%2FrYs40PuJ6QdE1LSkvl7rjK%2FLe5uu%2FtE16WwZqHy1lDOK0DDXta%2Fn%2B1J0ukRWJJmuUXhYAaF%2BOjTmD%2F6%2FLjbySvCbFnv6fEhhRMPJgC1BsJ1NRQrrzwLMd%2F1jdCn98xTfP84KLakO9JmdU3SQmMWQhBYRJomRD%2BsyUqwJea8aP528FIt2WfQ6gTuBQYWTXaYZI5kWCQ2C90LDQY4%2BDLz17nBSw1k8n%2BBNgtMf45POvOb7L3VVc7CQfeYAlrYNURkZ0UIVe9BxTMKfLosEGOpwB4sBx%2BADGaWv1%2FwuPJhxOx3GMO0bdjmMLDJL7FNA5uK9bzn6WIwqHkh%2BuEy7Qcym4%2FnyFyRPR1YHMsDKYLPZhDeSgQnxUmN9%2FaLGFfGkDzZya0YWbEfVZPunYwr538SsopohpBzHjbxI%2BXN7ZltUupOj%2BFIIEI2cKVWtvxzAxXoJQ1hASrB6lUSX4DcWMPhRZxgXdfwf4XfvO1%2FPB&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250517T155100Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIA2YR6PYW5UGZFV4V4%2F20250517%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=3dbcfcab49db24219f848ebf087338624b86cba53202c8ce06687c56009f6a1e', link: 'https://finairi.com/', },
+
     { tag: 'NodeJS | SocketIO', title: 'The Royal Game of Ur', img: 'rg.png', link: 'https://github.com/MoWafy001/the-royal-game-of-ur', },
     { tag: 'NodeJS | SocketIO', title: 'Temp Group Chat', img: null, link: 'https://github.com/MoWafy001/temp-group-chat', },
     { tag: 'React', title: 'My Reads', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjames-priest.github.io%2Freactnd-project-myreads%2Fassets%2Fimages%2Fp1-small.jpg&f=1&nofb=1', link: 'https://github.com/MoWafy001/reactnd-project-myreads-starter', },
